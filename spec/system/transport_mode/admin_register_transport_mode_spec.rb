@@ -7,7 +7,8 @@ describe 'Usuário administrador cadastra nova modalidade de transporte' do
     #Act
     login_as(user)
     visit root_path
-    click_on 'Cadastrar Nova Modalidade de Transporte'
+    click_on 'Modalidades de Transporte'
+    click_on 'Cadastrar Nova Modalidade'
     fill_in 'Nome', with: 'Moto'
     fill_in 'Distância Mínima', with: 1
     fill_in 'Distância Máxima', with: 80

@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <% if current_user.admin? %>
-    <p>Área Restrita a Administradores</p>
+    <p>Área Restrita a Administradores - Olá <%= current_user.name %>!</p>
   <% else%>
-    <p>Área de Usuários<p>
+    <p>Área de Usuários - Olá <%= current_user.name %>!<p>
   <% end %>
 <% end %>

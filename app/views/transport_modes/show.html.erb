@@ -18,7 +18,7 @@
 </dl>
 
 <% if current_user.admin? %>
-  <%= link_to 'Editar', edit_transport_mode_path(@transport_mode.id) %>
+  <%= link_to 'Editar', edit_transport_mode_path(@transport_mode.id), :class => "btn btn-danger" %>
 <% end %>
 
 

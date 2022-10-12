@@ -3,28 +3,43 @@ body {
   background-color: #ccd2c6;
   color: #323e45;
   text-decoration: none;
-  padding: 15px;
 }
-a {
+
+.log a {
  text-decoration: none;
- color: #8ba88e;
+ color: #ccd2c6; 
+}
+
+nav > a {
+  text-decoration: none;
+  color: #ccd2c6; 
+}
+
+a {
+  text-decoration: none;
+  color: #c53333; 
 }
 
 a:hover {
   text-decoration: none;
-  color: #5a786f;
+  color: #8ba88e;
+  
 }
 
 header {
   background-color: #323e45;
-  padding: 15px;
+  padding-left: 3rem;
+  padding-top: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 1rem;
 }
 
 nav {
-  padding: 10px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   color: #ccd2c6;
+  align-items: center;
+  padding-top: 1rem;
 }
 
 .log  {
@@ -33,7 +48,15 @@ nav {
   justify-content: space-between;
 }
 
-div {
-  padding: 5px;
+.principal {
+  padding: 3rem;
 }
 
+.btn-danger {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.messages {
+  padding-left: 3rem;
+}
