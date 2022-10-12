@@ -9,7 +9,6 @@ gems adicionadas:
 gem "rspec-rails"
 gem "capybara"
 gem "devise"
-gem 'bootstrap', '~> 5.2.1'
 
 link Trello
 https://trello.com/invite/b/CrMktbd1/f3249ef42ea90b6d659b69b924978b68/sistema-de-frete
