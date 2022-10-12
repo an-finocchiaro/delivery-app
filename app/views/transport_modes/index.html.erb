@@ -1,0 +1,20 @@
+<h4>Modalidades de Transporte Disponíveis</h4>
+
+<% if @transport_modes.any? %>
+  <div>
+    <%= @transport_modes.each do |tm| %>
+      <h5>Nome: <%= link_to(tm.name, transport_mode_path(tm.id)) %></h5>
+      <p>Distância Mínima: <%= tm.min_distance %> km - Distância Máxima: <%= tm.max_distance %> km</p>
+      <p>Peso Mínimo: <%= tm.min_weight %> kg - Peso Máximo: <%= tm.max_weight %> kg</p>
+      <p>Taxa Fixa: R$ <%= tm.fixed_rate %>,00 - Status: <%= I18n.translate(tm.status) %></p><br/>
+    <% end %>
+  </div>
+<% else %>
+  <p>Não existem Modalidades de Transporte cadastradas</p>
+<% end %>
+  
+
+<% if current_user.admin? %>
+  <%= link_to 'Cadastrar Nova Modalidade', new_transport_mode_path %>
+<% end %>
+

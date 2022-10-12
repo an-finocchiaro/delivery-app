@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    models:
+      user: Customer
+    attributes:
+      user:
+        login: "Handle"
+      # will translate User attribute "login" as "Handle"
+# nome do model.model_name.human return Nome do Model
+# nome do model,human_attribute_name("attribute") 

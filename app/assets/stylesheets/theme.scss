@@ -1,0 +1,39 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ccd2c6;
+  color: #323e45;
+  text-decoration: none;
+  padding: 15px;
+}
+a {
+ text-decoration: none;
+ color: #8ba88e;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #5a786f;
+}
+
+header {
+  background-color: #323e45;
+  padding: 15px;
+}
+
+nav {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  color: #ccd2c6;
+}
+
+.log  {
+  display: flex;
+  color: #8ba88e;
+  justify-content: space-between;
+}
+
+div {
+  padding: 5px;
+}
+

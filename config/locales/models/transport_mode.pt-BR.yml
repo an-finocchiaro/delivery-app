@@ -1,0 +1,18 @@
+pt-BR:
+  active: "Ativa"
+  inactive: "Inativa"
+  activerecord:
+    models:
+      transporte_mode:
+        one: Modalidade de Transporte
+        other: Modalidades de Transporte
+    attributes:
+      transport_mode: 
+        name: 'Nome'
+        min_distance: "Distância Mínima"
+        max_distance: "Distância Máxima"
+        min_weight: "Peso Mínimo"
+        max_weight: "Peso Máximo"
+        fixed_rate: "Taxa Fixa"
+        status: "Status"
+          
