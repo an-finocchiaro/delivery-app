@@ -1,0 +1,37 @@
+
+<section class="vehicle_search">
+  <div>
+    <% if user_signed_in? %>
+      <%= form_with(url: search_vehicles_path, method: :get) do |f| %>
+        <%= f.label :query, (t '.vehicle_search'), :class => "form-label" %>
+        <%= f.text_field :query, :class => "form-control" %>
+        <%= f.submit (t '.search'), :class => "btn btn-danger" %>
+      <% end %>
+    <% end %>
+  </div>
+  <div>
+    <p><%= t '.search_result' %>:
+    <% if @vehicles.present? %>
+      <% @vehicles.each do |vehicle| %>
+          <dl>
+            <dt><%= Vehicle.human_attribute_name(:transport_mode) %>: </dt>
+            <dd><%= vehicle.transport_mode.name %></dd>
+            <dt><%= Vehicle.human_attribute_name(:license) %>: </dt>
+            <dd><%= vehicle.license %></dd>
+            <dt><%= Vehicle.human_attribute_name(:brand) %>: </dt>
+            <dd><%= vehicle.brand %></dd>
+            <dt><%= Vehicle.human_attribute_name(:model) %>: </dt>
+            <dd><%= vehicle.model %></dd>
+            <dt><%= Vehicle.human_attribute_name(:year) %>: </dt>
+            <dd><%= vehicle.year %></dd>
+            <dt><%= Vehicle.human_attribute_name(:max_load) %>: </dt>
+            <dd><%= vehicle.max_load %> kg</dd>
+            <dt><%= Vehicle.human_attribute_name(:availability) %>: </dt>
+            <dd><%= I18n.translate(vehicle.availability) %></dd>
+          </dl>
+      <% end %>
+    <% else %>
+      <%= t '.fail' %>
+    <% end %>
+  </div>
+</section>

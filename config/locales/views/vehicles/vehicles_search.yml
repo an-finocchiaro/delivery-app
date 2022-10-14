@@ -1,0 +1,11 @@
+pt-BR:
+  available: "Disponível"
+  reserved: "Em Serviço"
+  maintenance: "Em Manutenção"
+  vehicles:
+    search:
+      vehicle_search: 'Buscar Veículo'
+      search: 'Buscar'
+      search_result: 'Resultado da Busca'
+      fail: 'Sua busca não retornou resultados'
+      query: 'Busca'

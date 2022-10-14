@@ -1,7 +1,9 @@
-<% if user_signed_in? %>
-  <% if current_user.admin? %>
-    <p><%= t '.message_adm' %><%= current_user.name %>!</p>
-  <% else%>
-    <p><%= t '.message_user' %><%= current_user.name %>!<p>
+<div>
+  <% if user_signed_in? %>
+    <% if current_user.admin? %>
+      <p><%= t '.message_adm' %><%= current_user.name %>!</p>
+    <% else%>
+      <p><%= t '.message_user' %><%= current_user.name %>!<p>
+    <% end %>
   <% end %>
-<% end %>
+</div>

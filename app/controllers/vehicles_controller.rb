@@ -38,4 +38,9 @@ class VehiclesController < ApplicationController
     @vehicle.update(vehicle_params)
     redirect_to @vehicle, notice: t('.registered')
   end
+
+  def search
+    @license = params["query"]
+    @vehicles = Vehicle.where("license LIKE ?", "%#{@license}%")
+  end
 end

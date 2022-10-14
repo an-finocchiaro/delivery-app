@@ -23,8 +23,9 @@
       </div>
       <nav>
         <% if user_signed_in? %>
-          <%= link_to (t '.transport_modes'), transport_modes_path %>
-          <%= link_to (t '.vehicles'), vehicles_path %>
+          <%= link_to (t '.transport_modes'), transport_modes_path %> |
+          <%= link_to (t '.vehicles'), vehicles_path %> |
+          <%= link_to (t '.vehicles_search'), search_vehicles_path %>
           <%= button_to (t '.logout'), destroy_user_session_path, method: :delete, :class => "btn btn-danger" %>
         <% end %>
       </nav>
