@@ -1,0 +1,7 @@
+pt-BR:
+  transport_modes:
+    create:
+      success: Modalidade de Transporte cadastrada com sucesso
+      fail: Não foi possível cadastrar a Modalidade
+    update:
+      registered: Alteração registrada com sucesso

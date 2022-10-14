@@ -1,0 +1,10 @@
+pt-BR:
+  transport_modes:
+    show:
+      title: "Modalidade de Transporte"
+      back: "Voltar"
+      km: "km"
+      kg: "kg"
+      $: "R$"
+      centimes: ",00"
+      edit: "Editar"

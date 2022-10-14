@@ -102,5 +102,16 @@ RSpec.describe TransportMode, type: :model do
       #Assert
       expect(result).to be true
     end
+
+    it 'nome deve ser único' do
+      #Arrange
+      transport_mode = TransportMode.create!(name: 'Bicicleta', min_distance: 1, max_distance: 15, min_weight: 0, max_weight: 6, fixed_rate: 5)
+      other_transport_mode = TransportMode.new(name: 'Bicicleta')
+      #Act
+      other_transport_mode.valid?
+      result = other_transport_mode.errors.include?(:name)
+      #Assert
+      expect(result).to be true
+    end
   end
 end

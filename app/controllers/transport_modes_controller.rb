@@ -1,4 +1,5 @@
 class TransportModesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @transport_modes = TransportMode.all
@@ -14,9 +15,9 @@ class TransportModesController < ApplicationController
     @transport_mode = TransportMode.new(transport_mode_params)
     
     if @transport_mode.save
-      redirect_to @transport_mode, notice: 'Modalidade de Transporte cadastrada com sucesso'
+      redirect_to @transport_mode, notice: t('.success')
     else
-      flash.now[:alert] = 'Não foi possível cadastrar a Modalidade'
+      flash.now[:alert] = t('.fail')
       render :new
     end
   end
@@ -33,6 +34,6 @@ class TransportModesController < ApplicationController
     @transport_mode = TransportMode.find(params[:id])
     transport_mode_params = params.require(:transport_mode).permit(:name, :min_distance, :max_distance, :min_weight, :max_weight, :fixed_rate, :status)
     @transport_mode.update(transport_mode_params)
-    redirect_to @transport_mode, notice: 'Alteração registrada com sucesso'
+    redirect_to @transport_mode, notice: t('.registered')
   end
 end

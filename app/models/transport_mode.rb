@@ -1,4 +1,7 @@
 class TransportMode < ApplicationRecord
+  has_many :vehicles
+
+  validates :name, uniqueness: true
 
   validates :name, :min_distance, :max_distance, :min_weight, :max_weight, :fixed_rate, presence: true
 

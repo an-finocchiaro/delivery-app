@@ -1,0 +1,8 @@
+pt-BR:
+  layouts:
+    application:
+      title: "Sistema de Frete"
+      user: "Usuário: "
+      transport_modes: "Modalidades de Transporte"
+      vehicles: "Veículos"
+      logout: "Sair"

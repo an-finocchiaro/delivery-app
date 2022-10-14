@@ -1,0 +1,5 @@
+pt-BR:
+  transport_modes:
+    form:
+      submit: "Cadastrar"
+      

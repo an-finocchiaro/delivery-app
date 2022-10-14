@@ -1,0 +1,23 @@
+<%= link_to (t '.back'), vehicles_path, :class => "btn btn-danger" %>
+<h4><%= t '.title' %></h4>
+
+<dl>
+  <dt><%= Vehicle.human_attribute_name(:transport_mode) %>: </dt>
+  <dd><%= @vehicle.transport_mode.name %></dd>
+  <dt><%= Vehicle.human_attribute_name(:license) %>: </dt>
+  <dd><%= @vehicle.license %></dd>
+  <dt><%= Vehicle.human_attribute_name(:brand) %>: </dt>
+  <dd><%= @vehicle.brand %></dd>
+  <dt><%= Vehicle.human_attribute_name(:model) %>: </dt>
+  <dd><%= @vehicle.model %></dd>
+  <dt><%= Vehicle.human_attribute_name(:year) %>: </dt>
+  <dd><%= @vehicle.year %></dd>
+  <dt><%= Vehicle.human_attribute_name(:max_load) %>: </dt>
+  <dd><%= @vehicle.max_load %> kg</dd>
+  <dt><%= Vehicle.human_attribute_name(:availability) %>: </dt>
+  <dd><%= I18n.translate(@vehicle.availability) %></dd>
+</dl>
+
+<% if current_user.admin? %>
+  <%= link_to (t '.edit'), edit_vehicle_path(@vehicle.id), :class => "btn btn-danger" %>
+<% end %>

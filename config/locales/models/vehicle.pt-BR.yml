@@ -1,0 +1,20 @@
+pt-BR:
+  available: "Disponível"
+  reserved: "Em Serviço"
+  maintenance: "Em Manutenção"
+  activerecord:
+    models:
+      vehicle:
+        one: Veículo
+        other: Veículos
+    attributes:
+      vehicle: 
+        license: 'Placa'
+        brand: "Marca"
+        model: "Modelo"
+        year: "Ano de Fabricação"
+        max_load: "Capacidade Máxima de Carga"
+        availability: "Situação"
+        transport_mode: "Modalidade de Transporte"
+        transport_mode_id: "Modalidade de Transporte"
+        

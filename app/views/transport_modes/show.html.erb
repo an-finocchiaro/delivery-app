@@ -1,24 +1,25 @@
-<h2>Modalidade de Transporte: <%= @transport_mode.name %></h2>
+<%= link_to (t '.back'), transport_modes_path, :class => "btn btn-danger" %>
+<h2><%= t '.title' %>: <%= @transport_mode.name %></h2>
 
 <dl>
   <dt><%= TransportMode.human_attribute_name(:name) %></dt>
   <dd><%= @transport_mode.name %></dd>
   <dt><%= TransportMode.human_attribute_name(:min_distance) %>: </dt>
-  <dd><%= @transport_mode.min_distance %> km</dd>
+  <dd><%= @transport_mode.min_distance %> <%= t '.km' %></dd>
   <dt><%= TransportMode.human_attribute_name(:max_distance) %>: </dt>
-  <dd><%= @transport_mode.max_distance %> km</dd>
+  <dd><%= @transport_mode.max_distance %> <%= t '.km' %></dd>
   <dt><%= TransportMode.human_attribute_name(:min_weight) %>: </dt>
-  <dd><%= @transport_mode.min_weight %> kg</dd>
+  <dd><%= @transport_mode.min_weight %> <%= t '.kg' %></dd>
   <dt><%= TransportMode.human_attribute_name(:max_weight) %>: </dt>
-  <dd><%= @transport_mode.max_weight %> kg</dd>
+  <dd><%= @transport_mode.max_weight %> <%= t '.kg' %></dd>
   <dt><%= TransportMode.human_attribute_name(:fixed_rate) %>: </dt>
-  <dd>R$ <%= @transport_mode.fixed_rate %>,00</dd>
+  <dd><%= t '.$' %> <%= @transport_mode.fixed_rate %><%= t '.centimes' %></dd>
   <dt><%= TransportMode.human_attribute_name(:status) %>: </dt>
   <dd><%= I18n.translate(@transport_mode.status) %></dd>
 </dl>
 
 <% if current_user.admin? %>
-  <%= link_to 'Editar', edit_transport_mode_path(@transport_mode.id), :class => "btn btn-danger" %>
+  <%= link_to (t '.edit'), edit_transport_mode_path(@transport_mode.id), :class => "btn btn-danger" %>
 <% end %>
 
 

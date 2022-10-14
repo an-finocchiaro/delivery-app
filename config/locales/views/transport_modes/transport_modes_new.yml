@@ -1,0 +1,6 @@
+pt-BR:
+  transport_modes:
+    new:
+      title: "Cadastrar Modalidade de Transporte"
+      back: "Voltar"
+      

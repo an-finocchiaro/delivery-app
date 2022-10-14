@@ -1,0 +1,11 @@
+pt-BR:
+  vehicles:
+    index:
+      title: "Veículos Cadastrados"
+      transport_mode: "Modalidade de Transporte"
+      license: "Placa"
+      brand: "Marca"
+      back: "Voltar"
+      model: "Modelo"
+      message: "Não existem Veículos cadastrados"
+      register_new: "Cadastrar Novo Veículo"

@@ -1,0 +1,6 @@
+pt-BR:
+  vehicles:
+    show:
+      title: "Informações do Veículo"
+      back: "Voltar"
+      edit: "Editar"

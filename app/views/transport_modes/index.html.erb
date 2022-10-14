@@ -1,19 +1,19 @@
-<h4>Modalidades de Transporte Disponíveis</h4><br/>
+<h4><%= t '.title' %></h4><br/>
 <div>
 <% if @transport_modes.any? %>
     <% @transport_modes.each do |tm| %>
-      <h5>Nome: <%= link_to(tm.name, transport_mode_path(tm.id)) %></h5>
-      <p>Distância Mínima: <%= tm.min_distance %> km - Distância Máxima: <%= tm.max_distance %> km</p>
-      <p>Peso Mínimo: <%= tm.min_weight %> kg - Peso Máximo: <%= tm.max_weight %> kg</p>
-      <p>Taxa Fixa: R$ <%= tm.fixed_rate %>,00 - Status: <%= I18n.translate(tm.status) %></p><br/>
+      <h5><%= t '.name' %>: <%= link_to(tm.name, transport_mode_path(tm.id)) %></h5>
+      <p><%= t '.min_distance' %>: <%= tm.min_distance %> <%= t '.km' %> - <%= t '.max_distance' %>: <%= tm.max_distance %> <%= t '.km' %></p>
+      <p><%= t '.min_weight' %>: <%= tm.min_weight %> <%= t '.kg' %> - <%= t '.max_weight' %>: <%= tm.max_weight %> <%= t '.kg' %></p>
+      <p><%= t '.fixed_rate' %>: <%= t '.$' %> <%= tm.fixed_rate %><%= t '.centimes' %> - <%= t '.status' %>: <%= I18n.translate(tm.status) %></p><br/>
     <% end %>
 <% else %>
-  <p>Não existem Modalidades de Transporte cadastradas</p>
+  <p><%= t '.message' %></p>
 <% end %>
 </div>
 <div>
   <% if current_user.admin? %>
-    <%= link_to 'Cadastrar Nova Modalidade', new_transport_mode_path, :class => "btn btn-danger" %>
+    <%= link_to (t '.register'), new_transport_mode_path, :class => "btn btn-danger" %>
   <% end %>
 </div>
 

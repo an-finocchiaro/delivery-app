@@ -1,0 +1,18 @@
+<h4><%= t '.title' %></h4>
+<br/>
+<div>
+  <% if @vehicles.any? %>
+    <% @vehicles.each do |v| %>
+      <p><%= t '.transport_mode' %>: <%= v.transport_mode.name %>
+      <p><%= t '.license' %>: <%= link_to(v.license, vehicle_path(v.id)) %></p>
+      <p><%= t '.brand' %>: <%= v.brand %> - <%= t '.model' %>: <%= v.model %></p><br/>
+    <% end %>
+  <% else %>
+    <p><%= t '.message' %></p>
+  <% end %>
+</div>
+<div>
+  <% if current_user.admin? %>
+    <%= link_to (t '.register_new'), new_vehicle_path, :class => "btn btn-danger" %>
+  <% end %>
+</div>

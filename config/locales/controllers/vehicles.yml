@@ -1,0 +1,7 @@
+pt-BR:
+  vehicles:
+    create:
+      success: Veículo cadastrado com sucesso
+      fail: Não foi possível cadastrar o Veículo
+    update:
+      registered: Alteração registrada com sucesso

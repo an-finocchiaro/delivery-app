@@ -1,0 +1,17 @@
+pt-BR:
+  transport_modes:
+    index:
+      title: "Modalidades de Transporte Disponíveis"
+      name: "Nome"
+      min_distance: "Distância Mínima"
+      km: "km"
+      max_distance: "Distância Máxima"
+      min_weight: "Peso Mínimo"
+      kg: "kg"
+      max_weight: "Peso Máximo"
+      fixed_rate: "Taxa Fixa"
+      $: "R$"
+      centimes: ",00"
+      status: "Status"
+      message: "Não existem Modalidades de Transporte cadastradas"
+      register: "Cadastrar Nova Modalidade"
