@@ -12,3 +12,5 @@ pt-BR:
       weight_rate_index: 'Ver Tabela de Preços por Peso'
       distance_rate_new: 'Adicionar Tabela de Preços por Distância'
       distance_rate_index: 'Ver Tabela de Preços por Distância'
+      delivery_deadline_new: 'Adicionar Tabela de Prazos de Entrega'
+      delivery_deadline_index: 'Ver Tabela de Prazos de Entrega'

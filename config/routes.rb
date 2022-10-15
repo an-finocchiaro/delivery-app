@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :transport_modes, only: [:index, :new, :create, :show, :edit, :update] do
     resources :weight_rates, only: [:index, :new, :create]
     resources :distance_rates, only: [:index, :new, :create]
+    resources :delivery_deadlines, only: [:index, :new, :create]
   end
   resources :vehicles, only: [:index, :show, :new, :create, :edit, :update] do
     get 'search', on: :collection

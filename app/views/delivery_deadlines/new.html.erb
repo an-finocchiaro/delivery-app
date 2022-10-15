@@ -1,0 +1,18 @@
+<h4><%= t '.title' %></h4>
+<p><%= t '.subtitle' %> <%= @transport_mode.name %></p>
+
+<%= form_with(model:[@transport_mode, @delivery_deadline]) do |f| %>
+  <div>
+    <%= f.label :min_delivery_distance, :class => "form-label" %>
+    <%= f.number_field :min_delivery_distance, :class => "form-control" %>
+  </div>
+  <div>
+    <%= f.label :max_delivery_distance, :class => "form-label" %>
+    <%= f.number_field :max_delivery_distance, :class => "form-control" %>
+  </div>
+  <div>
+    <%= f.label :deadline, :class => "form-label" %>
+    <%= f.number_field :deadline, :class => "form-control" %>
+  </div>
+  <%= f.submit (t '.submit'), :class => "btn btn-danger" %>
+<% end %>

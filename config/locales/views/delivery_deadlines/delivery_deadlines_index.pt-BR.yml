@@ -1,0 +1,17 @@
+pt-BR:
+  delivery_deadlines:
+    index:
+      title: "Tabela de Prazos de Entrega"
+      subtitle: 'Modalidade de Transporte:'
+      min_delivery_distance: "Distância Inicial"
+      max_delivery_distance: "Distância Final"
+      deadline: "Prazo de Entrega"
+      transport_mode_id: "Modalidade de Transporte"
+      submit: "Cadastrar"
+      th_mode: 'Modalidade'
+      th_min_deliv_distance: "Distância Inicial"
+      th_max_deliv_distance: "Distância Final"
+      th_deadline: "Prazo de Entrega"
+      th_id: 'Número do Registro'
+      km: 'Km'
+      hours: "horas"

@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      delivery_deadline:
+        one: Tabela de Prazos de Entrega
+        other: Tabelas de Prazos de Entrega
+    attributes:
+      delivery_deadline: 
+        min_delivery_distance: "Distância Inicial"
+        max_delivery_distance: "Distância Final"
+        deadline: "Prazo de Entrega"
+        transport_mode_id: "Modalidade de Transporte"

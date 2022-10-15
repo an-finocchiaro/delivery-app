@@ -1,0 +1,28 @@
+<h4><%= t '.title' %></h4>
+<br/>
+<div>
+  <% if @transport_mode.delivery_deadlines.any? %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"><%= t '.th_mode' %></th>
+          <th scope="col"><%= t '.th_min_deliv_distance' %></th>
+          <th scope="col"><%= t '.th_max_deliv_distance' %></th>
+          <th scope="col"><%= t '.th_deadline' %></th>
+          <th scope="col"><%= t '.th_id' %></th>
+        </tr>
+      </thead>
+      <% @transport_mode.delivery_deadlines.each do |r| %>
+        <tbody>
+          <tr>
+            <td><%= @transport_mode.name %></td>
+            <td><%= r.min_delivery_distance %> <%= t '.km' %></td>
+            <td><%= r.max_delivery_distance %> <%= t '.km' %></td>
+            <td><%= r.deadline %> <%= t '.hours' %></td>
+            <td><%= r.id %></td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+  <% end %>
+</div>

@@ -1,0 +1,10 @@
+pt-BR:
+  delivery_deadlines:
+    new:
+      title: "Criar Tabela de Prazos de Entrega"
+      subtitle: 'Modalidade de Transporte:'
+      min_delivery_distance: "Distância Inicial"
+      max_delivery_distance: "Distância Final"
+      deadline: "Prazo de Entrega"
+      transport_mode_id: "Modalidade de Transporte"
+      submit: "Cadastrar"
