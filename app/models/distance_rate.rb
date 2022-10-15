@@ -1,4 +1,5 @@
 class DistanceRate < ApplicationRecord
-  before_action :authenticate_user!
   belongs_to :transport_mode
+
+  validates :min_distance_rate, :max_distance_rate, :price, presence: true
 end

@@ -9,4 +9,6 @@ pt-BR:
       centimes: ",00"
       edit: "Editar Modalidade"
       weight_rate_new: 'Adicionar Tabela de Preços por Peso'
-      weight_rate_show: 'Ver Tabela de Preços por Peso'
+      weight_rate_index: 'Ver Tabela de Preços por Peso'
+      distance_rate_new: 'Adicionar Tabela de Preços por Distância'
+      distance_rate_index: 'Ver Tabela de Preços por Distância'

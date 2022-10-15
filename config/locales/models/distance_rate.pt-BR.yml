@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      distance_rate:
+        one: Tabela de Preços por Distância
+        other: Tabelas de Preços por Distância
+    attributes:
+      distance_rate: 
+        min_distance_rate: "Km Inicial"
+        max_distance_rate: "Km Final"
+        price: "Taxa"
+        transport_mode_id: "Modalidade de Transporte"

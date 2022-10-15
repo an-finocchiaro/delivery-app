@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  before_action :authenticate_user!
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   enum role: [:user, :admin]

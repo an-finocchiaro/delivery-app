@@ -1,0 +1,13 @@
+pt-BR:
+  weight_rates:
+    index:
+      title: 'Tabela de Preços por Peso'
+      th_mode: 'Modalidade'
+      th_initial_weight: 'Peso Inicial'
+      th_final_weight: 'Peso Final'
+      th_price_kg: 'R$/Kg'
+      th_id: 'Número do Registro'
+      th_edit: 'editar'
+      kg: 'kg'
+      currency: 'R$'
+      currency_kg: ',00/Kg'

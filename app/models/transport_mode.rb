@@ -1,5 +1,4 @@
 class TransportMode < ApplicationRecord
-  before_action :authenticate_user!
   has_many :vehicles
   has_many :weight_rates
   has_many :distance_rates

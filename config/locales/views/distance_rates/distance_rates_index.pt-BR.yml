@@ -1,0 +1,14 @@
+pt-BR:
+  distance_rates:
+    index:
+      title: 'Tabela de Preços por Distância'
+      th_mode: 'Modalidade'
+      th_initial_km: 'Km Inicial'
+      th_final_km: 'Km Final'
+      th_price: 'Taxa'
+      th_id: 'Número do Registro'
+      min_distance_rate: "Km Inicial"
+      max_distance_rate: "Km Final"
+      km: 'Km'
+      currency: 'R$'
+      centimes: ',00'

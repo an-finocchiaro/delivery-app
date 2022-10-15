@@ -19,7 +19,8 @@
 </dl>
 
   <div>
-    <%= link_to (t '.weight_rate_show'), transport_mode_weight_rate_path(transport_mode_id: @transport_mode.id), :class => "btn btn-danger" %>
+    <%= link_to (t '.weight_rate_index'), transport_mode_weight_rates_path(transport_mode_id: @transport_mode.id), :class => "btn btn-danger" %>
+    <%= link_to (t '.distance_rate_index'), transport_mode_distance_rates_path(transport_mode_id: @transport_mode.id), :class => "btn btn-danger" %>
   </div>
 <% if current_user.admin? %>
   <div>
@@ -27,6 +28,7 @@
   </div>
   <div>
     <%= link_to (t '.weight_rate_new'), new_transport_mode_weight_rate_path(transport_mode_id: @transport_mode.id), :class => "btn btn-danger" %>
+    <%= link_to (t '.distance_rate_new'), new_transport_mode_distance_rate_path(transport_mode_id: @transport_mode.id), :class => "btn btn-danger" %>
   </div>
 <% end %>
 

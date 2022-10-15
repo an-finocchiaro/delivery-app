@@ -1,0 +1,10 @@
+pt-BR:
+  distance_rates:
+    new:
+      title: "Criar Tabela de Preços por Distância"
+      subtitle: 'Modalidade de Transporte:'
+      min_distance_rate: "Km Inicial"
+      max_distance_rate: "Km Final"
+      price: "Taxa"
+      transport_mode_id: "Modalidade de Transporte"
+      submit: "Cadastrar"

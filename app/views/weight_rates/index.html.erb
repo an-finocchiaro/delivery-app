@@ -1,0 +1,28 @@
+<h4><%= t '.title' %></h4>
+<br/>
+<div>
+  <% if @transport_mode.weight_rates.any? %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"><%= t '.th_mode' %></th>
+          <th scope="col"><%= t '.th_initial_weight' %></th>
+          <th scope="col"><%= t '.th_final_weight' %></th>
+          <th scope="col"><%= t '.th_price_kg' %></th>
+          <th scope="col"><%= t '.th_id' %></th>
+        </tr>
+      </thead>
+      <% @transport_mode.weight_rates.each do |r| %>
+        <tbody>
+          <tr>
+            <td><%= @transport_mode.name %></td>
+            <td><%= r.min_weight_range %> <%= t '.kg' %></td>
+            <td><%= r.max_weight_range %> <%= t '.kg' %></td>
+            <td><%= t '.currency' %> <%= r.price_kg %><%= t '.currency_kg' %></td>
+            <td><%= r.id %></td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+  <% end %>
+</div>

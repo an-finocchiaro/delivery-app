@@ -1,5 +1,4 @@
 class Vehicle < ApplicationRecord
-  before_action :authenticate_user!
   belongs_to :transport_mode
 
   enum availability: {available: 0, reserved: 1, maintenance: 2}

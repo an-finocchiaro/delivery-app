@@ -1,5 +1,5 @@
 <h4><%= t '.title' %></h4>
-<p>Modalidade de Transporte: <%= @transport_mode.name %>
+<p><%= t '.subtitle' %> <%= @transport_mode.name %></p>
 
 <%= form_with(model:[@transport_mode, @weight_rate]) do |f| %>
   <div>
