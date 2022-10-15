@@ -1,0 +1,18 @@
+<h4><%= t '.title' %></h4>
+<p>Modalidade de Transporte: <%= @transport_mode.name %>
+
+<%= form_with(model:[@transport_mode, @weight_rate]) do |f| %>
+  <div>
+    <%= f.label :min_weight_range, :class => "form-label" %>
+    <%= f.number_field :min_weight_range, :class => "form-control" %>
+  </div>
+  <div>
+    <%= f.label :max_weight_range, :class => "form-label" %>
+    <%= f.number_field :max_weight_range, :class => "form-control" %>
+  </div>
+  <div>
+    <%= f.label :price_kg, :class => "form-label" %>
+    <%= f.number_field :price_kg, :class => "form-control" %>
+  </div>
+  <%= f.submit (t '.submit'), :class => "btn btn-danger" %>
+<% end %>

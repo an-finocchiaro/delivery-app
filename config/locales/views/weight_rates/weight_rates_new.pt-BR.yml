@@ -1,0 +1,8 @@
+pt-BR:
+  weight_rates:
+    new:
+      title: "Criar Tabela de Preços por Peso"
+      max_weight_range: "Peso Final"
+      transport_mode_id: "Modalidade de Transporte"
+      submit: "Cadastrar"
+      

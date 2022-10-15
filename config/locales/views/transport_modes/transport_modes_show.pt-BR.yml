@@ -7,4 +7,6 @@ pt-BR:
       kg: "kg"
       $: "R$"
       centimes: ",00"
-      edit: "Editar"
+      edit: "Editar Modalidade"
+      weight_rate_new: 'Adicionar Tabela de Preços por Peso'
+      weight_rate_show: 'Ver Tabela de Preços por Peso'

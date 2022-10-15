@@ -18,8 +18,16 @@
   <dd><%= I18n.translate(@transport_mode.status) %></dd>
 </dl>
 
+  <div>
+    <%= link_to (t '.weight_rate_show'), transport_mode_weight_rate_path(transport_mode_id: @transport_mode.id), :class => "btn btn-danger" %>
+  </div>
 <% if current_user.admin? %>
-  <%= link_to (t '.edit'), edit_transport_mode_path(@transport_mode.id), :class => "btn btn-danger" %>
+  <div>
+    <%= link_to (t '.edit'), edit_transport_mode_path(@transport_mode.id), :class => "btn btn-danger" %>
+  </div>
+  <div>
+    <%= link_to (t '.weight_rate_new'), new_transport_mode_weight_rate_path(transport_mode_id: @transport_mode.id), :class => "btn btn-danger" %>
+  </div>
 <% end %>
 
 

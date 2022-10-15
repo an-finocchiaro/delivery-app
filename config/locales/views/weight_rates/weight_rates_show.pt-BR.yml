@@ -1,0 +1,5 @@
+pt-BR:
+  weight_rates:
+    show:
+      title: 'Tabela de Preços por Peso'
+      

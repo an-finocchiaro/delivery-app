@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      weight_rate:
+        one: Tabela de Preços por Peso
+        other: Tabelas de Preços por Peso
+    attributes:
+      weight_rate: 
+        min_weight_range: "Peso Inicial"
+        max_weight_range: "Peso Final"
+        price_kg: "Taxa por Kg"
+        transport_mode_id: "Modalidade de Transporte"

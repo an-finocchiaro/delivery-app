@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_12_235409) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_14_202852) do
+  create_table "delivery_deadlines", force: :cascade do |t|
+    t.integer "min_delivery_distance"
+    t.integer "max_delivery_distance"
+    t.integer "deadline"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "transport_mode_id", null: false
+    t.index ["transport_mode_id"], name: "index_delivery_deadlines_on_transport_mode_id"
+  end
+
+  create_table "distance_rates", force: :cascade do |t|
+    t.integer "min_distance_rate"
+    t.integer "max_distance_rate"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "transport_mode_id", null: false
+    t.index ["transport_mode_id"], name: "index_distance_rates_on_transport_mode_id"
+  end
+
   create_table "transport_modes", force: :cascade do |t|
     t.string "name"
     t.integer "min_distance"
@@ -50,5 +70,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_12_235409) do
     t.index ["transport_mode_id"], name: "index_vehicles_on_transport_mode_id"
   end
 
+  create_table "weight_rates", force: :cascade do |t|
+    t.integer "min_weight_range"
+    t.integer "max_weight_range"
+    t.integer "price_kg"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "transport_mode_id", null: false
+    t.index ["transport_mode_id"], name: "index_weight_rates_on_transport_mode_id"
+  end
+
+  add_foreign_key "delivery_deadlines", "transport_modes"
+  add_foreign_key "distance_rates", "transport_modes"
   add_foreign_key "vehicles", "transport_modes"
+  add_foreign_key "weight_rates", "transport_modes"
 end
