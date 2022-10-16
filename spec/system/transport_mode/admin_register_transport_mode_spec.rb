@@ -1,6 +1,15 @@
 require 'rails_helper'
 
 describe 'Usuário administrador cadastra nova modalidade de transporte' do
+
+  it 'e deve estar autenticado' do
+    visit root_path
+    
+    expect(page).to have_content 'faça login ou registre-se'
+    expect(page).not_to have_link 'Modalidades de Transporte'
+    expect(current_path).to eq new_user_session_path
+  end
+
   it 'com sucesso' do
     #Arrange
     user = User.create!(name: 'Ana Costa', email: 'ana@sistemadefrete.com', password: 'password', role: 1)

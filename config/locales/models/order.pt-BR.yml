@@ -1,10 +1,31 @@
-en:
+pt-BR:
+  pending: "Pendente"
+  running: "Em Andamento"
+  canceled: "Encerrada"
   activerecord:
     models:
-      user: Customer
+      order:
+        one: Ordem de Serviço
+        other: Ordens de Serviço
     attributes:
-      user:
-        login: "Handle"
-      # will translate User attribute "login" as "Handle"
-# nome do model.model_name.human return Nome do Model
-# nome do model,human_attribute_name("attribute") 
+      order: 
+        pickup_address: 'Endereço (Retirada)'
+        pickup_zipcode: 'CEP (Retirada)'
+        pickup_city: 'Cidade (Retirada)'
+        pickup_state: 'Estado (Retirada)'
+        product_code: 'Código do Produto'
+        product_dimension: 'Dimensões do Produto'
+        product_weight: 'Peso do Produto'
+        recipient_name: 'Nome do Destinatário'
+        recipient_phone: 'Telefone para Contato'
+        deliver_address: 'Endereço (Entrega)'
+        delivery_zipcode: 'CEP (Entrega)'
+        delivery_city: 'Cidade (Entrega)'
+        delivery_state: 'Estado (Entrega)'
+        delivery_distance: 'Distância Total'
+        user: 'Usuário'
+        status: 'Situação'
+        code: 'Código'
+
+        
+          

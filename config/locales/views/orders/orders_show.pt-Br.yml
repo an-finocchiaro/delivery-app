@@ -1,0 +1,29 @@
+pt-BR:
+  orders:
+    show:
+      back: 'Voltar'
+      title: "Detalhes de Ordem de Serviço"
+      subtitle: "Ordem de Serviço"
+      pickup_section: 'Dados de Retirada'
+      ps_address: 'Endereço'
+      ps_zipcode: 'CEP'
+      ps_city: 'Cidade'
+      ps_state: 'Estado'
+      product_session: 'Informações do Produto'
+      pr_code: 'Código do Produto'
+      pr_dimension: 'Dimensões do Produto'
+      cubic_meters: 'm3'
+      pr_weight: 'Peso do Produto'
+      kg: 'kg'
+      destination_section: 'Dados do Destino'
+      ds_recipient_name: 'Nome do Destinatário'
+      ds_recipient_phone: 'Telefone para Contato'
+      ds_address: 'Endereço'
+      ds_zipcode: 'CEP'
+      ds_city: 'Cidade'
+      ds_state: 'Estado'
+      ds_distance: 'Distância Total'
+      km: 'km'
+      order_status: 'Situação da Ordem de Serviço'
+      user_name: 'Usuário Responsável pelo Cadastro'
+      

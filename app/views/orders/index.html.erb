@@ -1,0 +1,17 @@
+<h4><%= t '.title' %></h4><br/>
+<div>
+  <% if @orders.any? %>
+    <% @orders.each do |order| %>
+      <h5><%= t '.subtitle' %>: <%= link_to(order.code, order_path(order.id)) %></h5>
+      <div>
+        <p><%= t '.ds_recipient_name' %>: <%= order.recipient_name %></p>
+        <p><%= t '.ds_recipient_phone' %>: <%= order.recipient_phone %></p>
+        <p><%= t '.pr_code' %>: <%= order.product_code %></p>
+        <p><%= t '.order_status' %>: <%= I18n.translate(order.status) %></p>
+        <p><%= t '.user_name' %>: <%= order.user.name %></p>
+      </div>
+    <% end %>
+  <% else %>
+    <p><%= t '.message' %></p>
+  <% end %>
+</div>

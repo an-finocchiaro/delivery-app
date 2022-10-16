@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_14_202852) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_16_133803) do
   create_table "delivery_deadlines", force: :cascade do |t|
     t.integer "min_delivery_distance"
     t.integer "max_delivery_distance"
@@ -29,6 +29,29 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_14_202852) do
     t.datetime "updated_at", null: false
     t.integer "transport_mode_id", null: false
     t.index ["transport_mode_id"], name: "index_distance_rates_on_transport_mode_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "code"
+    t.string "pickup_address"
+    t.string "pickup_zipcode"
+    t.string "pickup_city"
+    t.string "pickup_state"
+    t.string "product_code"
+    t.integer "product_dimension"
+    t.integer "product_weight"
+    t.string "recipient_name"
+    t.string "recipient_phone"
+    t.string "deliver_address"
+    t.string "delivery_zipcode"
+    t.string "delivery_city"
+    t.string "delivery_state"
+    t.integer "delivery_distance"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "status", default: 0
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "transport_modes", force: :cascade do |t|
@@ -82,6 +105,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_14_202852) do
 
   add_foreign_key "delivery_deadlines", "transport_modes"
   add_foreign_key "distance_rates", "transport_modes"
+  add_foreign_key "orders", "users"
   add_foreign_key "vehicles", "transport_modes"
   add_foreign_key "weight_rates", "transport_modes"
 end

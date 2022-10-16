@@ -1,0 +1,7 @@
+pt-BR:
+  orders:
+    new:
+      title: "Cadastrar Ordem de Serviço"
+      back: "Voltar"
+      submit: "Cadastrar"
+  

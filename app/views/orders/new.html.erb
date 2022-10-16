@@ -1,0 +1,69 @@
+<h4><%= t '.title' %></h4>
+<%= link_to (t '.back'), root_path, :class => "btn btn-danger" %>
+
+<%= form_with(model: @order) do |f| %>
+  <div id="pickup">
+    <div>
+      <%= f.label :pickup_address, :class => "form-label" %>
+      <%= f.text_field :pickup_address, :class => "form-control"%>
+    </div>
+    <div>
+      <%= f.label :pickup_zipcode, :class => "form-label" %>
+      <%= f.text_field :pickup_zipcode, :class => "form-control"%>
+    </div>
+    <div>
+      <%= f.label :pickup_city, :class => "form-label" %>
+      <%= f.text_field :pickup_city, :class => "form-control"%>
+    </div>
+    <div>
+      <%= f.label :pickup_state, :class => "form-label" %>
+      <%= f.text_field :pickup_state, :class => "form-control"%>
+    </div>
+  </div>
+  <div id="product">
+    <div>
+      <%= f.label :product_code, :class => "form-label" %>
+      <%= f.text_field :product_code, :class => "form-control"%>
+    </div>
+    <div>
+      <%= f.label :product_dimension, :class => "form-label" %>
+      <%= f.number_field :product_dimension, :class => "form-control"%>
+    </div>
+    <div>
+      <%= f.label :product_weight, :class => "form-label" %>
+      <%= f.number_field :product_weight, :class => "form-control"%>
+    </div>
+  </div>
+  <div id="recipient">
+    <div>
+      <%= f.label :recipient_name, :class => "form-label" %>
+      <%= f.text_field :recipient_name, :class => "form-control"%>
+    </div>
+    <div>
+      <%= f.label :recipient_phone, :class => "form-label" %>
+      <%= f.text_field :recipient_phone, :class => "form-control"%>
+    </div>
+    <div>
+      <%= f.label :deliver_address, :class => "form-label" %>
+      <%= f.text_field :deliver_address, :class => "form-control"%>
+    </div>
+    <div>
+      <%= f.label :delivery_zipcode, :class => "form-label" %>
+      <%= f.text_field :delivery_zipcode, :class => "form-control"%>
+    </div>
+    <div>
+      <%= f.label :delivery_city, :class => "form-label" %>
+      <%= f.text_field :delivery_city, :class => "form-control"%>
+    </div>
+    <div>
+      <%= f.label :delivery_state, :class => "form-label" %>
+      <%= f.text_field :delivery_state, :class => "form-control"%>
+    </div>
+    <div>
+      <%= f.label :delivery_distance, :class => "form-label" %>
+      <%= f.number_field :delivery_distance, :class => "form-control"%>
+    </div>
+  </div>
+  <%= f.submit (t '.submit'), :class => "btn btn-danger" %>
+<% end %>
+
