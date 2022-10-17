@@ -1,29 +1,29 @@
 <%= link_to (t '.back'), orders_path, :class => "btn btn-danger" %>
 <h4><%= t '.title' %></h4><br/>
 <div>
-  <h5><%= t '.subtitle' %>: <%= @order.code %></h5>
+  <h5><%= t '.subtitle' %>: <%= @order.code %></h5><br/>
   <div>
-    <p><%= t '.pickup_section' %>
+    <p class="text-danger"><%= t '.pickup_section' %></p>
     <p><%= t '.ps_address' %>: <%= @order.pickup_address %></p>
     <p><%= t '.ps_zipcode' %>: <%= @order.pickup_zipcode %></p>
     <p><%= t '.ps_city' %>: <%= @order.pickup_city %></p>
-    <p><%= t '.ps_state' %>: <%= @order.pickup_state %></p>
+    <p><%= t '.ps_state' %>: <%= @order.pickup_state %></p><br/>
   </div>
   <div>
-    <p><%= t '.product_section' %>
+    <p class="text-danger"><%= t '.product_section' %></p>
     <p><%= t '.pr_code' %>: <%= @order.product_code %></p>
     <p><%= t '.pr_dimension' %>: <%= @order.product_dimension %> <%= t '.cubic_meters' %></p>
-    <p><%= t '.pr_weight' %>: <%= @order.product_weight %> <%= t '.kg' %></p>
+    <p><%= t '.pr_weight' %>: <%= @order.product_weight %> <%= t '.kg' %></p><br/>
   </div>
   <div>
-    <p><%= t '.destination_section' %>
+    <p class="text-danger"><%= t '.destination_section' %>
     <p><%= t '.ds_recipient_name' %>: <%= @order.recipient_name %></p>
     <p><%= t '.ds_recipient_phone' %>: <%= @order.recipient_phone %></p>
     <p><%= t '.ds_address' %>: <%= @order.deliver_address %></p>
     <p><%= t '.ds_zipcode' %>: <%= @order.delivery_zipcode %></p>
     <p><%= t '.ds_city' %>: <%= @order.delivery_city %></p>
     <p><%= t '.ds_state' %>: <%= @order.delivery_state %></p>
-    <p><%= t '.ds_distance' %>: <%= @order.delivery_distance %> <%= t '.km' %></p>
+    <p><%= t '.ds_distance' %>: <%= @order.delivery_distance %> <%= t '.km' %></p><br/>
   </div>
   <div>
     <p><%= t '.order_status' %>: <%= I18n.translate(@order.status) %></p>

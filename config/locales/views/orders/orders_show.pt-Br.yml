@@ -9,7 +9,7 @@ pt-BR:
       ps_zipcode: 'CEP'
       ps_city: 'Cidade'
       ps_state: 'Estado'
-      product_session: 'Informações do Produto'
+      product_section: 'Informações do Produto'
       pr_code: 'Código do Produto'
       pr_dimension: 'Dimensões do Produto'
       cubic_meters: 'm3'

@@ -8,7 +8,7 @@
         <p><%= t '.ds_recipient_phone' %>: <%= order.recipient_phone %></p>
         <p><%= t '.pr_code' %>: <%= order.product_code %></p>
         <p><%= t '.order_status' %>: <%= I18n.translate(order.status) %></p>
-        <p><%= t '.user_name' %>: <%= order.user.name %></p>
+        <p><%= t '.user_name' %>: <%= order.user.name %></p><br/>
       </div>
     <% end %>
   <% else %>

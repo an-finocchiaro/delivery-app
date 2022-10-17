@@ -5,6 +5,7 @@
       <%= link_to (t '.order_new'), new_order_path, :class => "btn btn-danger" %>
     <% else%>
       <p><%= t '.message_user' %><%= current_user.name %>!<p>
+      <%= link_to (t '.order_index'), orders_path, :class => "btn btn-danger" %>
     <% end %>
   <% end %>
 </div>
