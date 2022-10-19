@@ -1,6 +1,6 @@
 class Vehicle < ApplicationRecord
   belongs_to :transport_mode
-
+ 
   enum availability: {available: 0, reserved: 1, maintenance: 2}
 
   validates :license, :brand, :model, :year, :max_load, presence: true

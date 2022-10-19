@@ -23,8 +23,13 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @order_freights = OrderFreight.all
+   
+  end
+
+  def run 
+    @order = Order.find(params[:id])
+    @order.running!
+    @order.run_freights_calculator
   end
 end
-
-        
-        

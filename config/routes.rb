@@ -13,5 +13,9 @@ Rails.application.routes.draw do
     get 'search', on: :collection
   end
 
-  resources :orders, only: [:new, :create, :index, :show]
+  resources :orders, only: [:new, :create, :index, :show] do
+    post 'run', on: :member
+  end
+ 
+  resources :order_freights, only: [:new, :create, :index] 
 end

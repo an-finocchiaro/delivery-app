@@ -16,9 +16,7 @@ class VehiclesController < ApplicationController
 
   def create
     vehicle_params = params.require(:vehicle).permit(:license, :brand, :model, :year, :max_load, :availability, :transport_mode_id)
-
     @vehicle = Vehicle.new(vehicle_params)
-    
     if @vehicle.save
       redirect_to @vehicle, notice: t('.success')
     else
