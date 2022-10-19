@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:new, :create, :index, :show] do
     post 'run', on: :member
+    post 'process', on: :member
+    post 'close', on: :member
   end
  
   resources :order_freights, only: [:new, :create, :index] 

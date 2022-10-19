@@ -31,5 +31,8 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.running!
     @order.run_freights_calculator
+    redirect_to @order
   end
+
+  
 end

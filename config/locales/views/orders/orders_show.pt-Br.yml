@@ -35,4 +35,5 @@ pt-BR:
       day: 'dia(s)'
       currency: 'R$'
       centimes: ',00'
+      process_order: 'Salvar'
       

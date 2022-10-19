@@ -35,24 +35,27 @@
   <%= button_to (t '.run_order'), run_order_path(@order.id), :class => "btn btn-danger" %>
 <% end %>
 <% if @order.running? %>
-  <h4><%= t '.select_transport_option' %></h4><br/>
+  <h4 class="text-danger"><%= t '.select_transport_option'%></h4><br/>
   <%= form_for @order do |f| %>
     <% @order.order_freights.each do |of| %>
-      <div class="freights" class="card bg-light mb-3" style="max-width: 18rem;">
-        <div class="freights_options">
-          <p><%= t '.tm_name' %>: <%= of.transport_mode_name %></p>
-          <p><%= t '.final_price' %>: <%= t '.currency' %> <%= of.final_price %><%= t '.centimes' %></p>
-          <p><%= t '.final_deadline' %>: <%= of.final_deadline %> <%= t '.day' %></p>
-        </div>
-        <div class="freights_options">
+      <div class="freights" class="border border-danger">
+        <div class="freights_options_button">
           <%= radio_button_tag orders_path, method: :get do %> 
             <%= submit_tag order_freight_id: :sort %>
           <% end %>
+          </div>
+          <div class="freights_options">
+            <p><%= t '.tm_name' %>: <%= of.transport_mode_name %></p>
+            <p><%= t '.final_price' %>: <%= t '.currency' %> <%= of.final_price %><%= t '.centimes' %></p>
+            <p><%= t '.final_deadline' %>: <%= of.final_deadline %> <%= t '.day' %></p>
+          </div>
         </div>
       </div>
     <% end %>
   <% end %>
+  <%= button_to (t '.process_order'), process_order_path(@order.id), :class => "btn btn-danger" %>
 <% end %>
+
 
 
 

@@ -18,7 +18,7 @@ class OrderFreightsController < ApplicationController
       redirect_to @order
     else
       flash.now[:alert] = 'Não foi possível registrar o pedido'
-      redirect_to @order
+      redirect_to @order(@order.id)
     end
   end
 end

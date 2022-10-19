@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'Usuário vê formulário para iniciar uma ordem de serviço' do
-  it 'com sucesso' do
+describe "Usuário escolhe opção de frete" do
+  it "com sucesso" do
     #Arrange
 
     #----user
@@ -59,7 +59,7 @@ describe 'Usuário vê formulário para iniciar uma ordem de serviço' do
     click_on 'Ver Ordens de Serviço Pendentes'
     click_on order.code
     click_on 'Iniciar Ordem de Serviço'
-
+    
     expect(page).to have_content "Situação da Ordem de Serviço: Em Andamento"
     expect(page).to have_content order.code
     expect(page).to have_content 'Selecione a opção de frete'
@@ -69,4 +69,5 @@ describe 'Usuário vê formulário para iniciar uma ordem de serviço' do
     expect(page).to have_content 'Modalidade de Transporte: Furgão'
     expect(page).to have_content 'Preço Total: R$ 155,00'
   end
+  
 end
