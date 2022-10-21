@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_19_220113) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_21_045017) do
   create_table "delivery_deadlines", force: :cascade do |t|
     t.integer "min_delivery_distance"
     t.integer "max_delivery_distance"
@@ -68,6 +68,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_220113) do
     t.date "order_closing_date"
     t.integer "delivery_final_status", default: 0
     t.string "justification"
+    t.string "order_final_vehicle"
+    t.integer "final_freight"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 

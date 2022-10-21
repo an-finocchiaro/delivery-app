@@ -27,35 +27,40 @@
   </div>
   <div>
     <p><%= t '.order_status' %>: <%= I18n.translate(@order.status) %></p>
-    <p><%= t '.user_name' %>: <%= @order.user.name %></p>
+    <p><%= t '.user_name' %>: <%= @order.user.name %></p><br/>
   </div>
 </div>
-<br/>
 <% if @order.pending? %>
   <%= button_to (t '.run_order'), run_order_path(@order.id), :class => "btn btn-danger" %>
 <% end %>
 <% if @order.running? %>
   <h4 class="text-danger"><%= t '.select_transport_option'%></h4><br/>
-  <%= form_for @order do |f| %>
+  <div>
     <% @order.order_freights.each do |of| %>
-      <div class="freights" class="border border-danger">
-        <div class="freights_options_button">
-          <%= radio_button_tag orders_path, method: :get do %> 
-            <%= submit_tag order_freight_id: :sort %>
-          <% end %>
-          </div>
-          <div class="freights_options">
-            <p><%= t '.tm_name' %>: <%= of.transport_mode_name %></p>
-            <p><%= t '.final_price' %>: <%= t '.currency' %> <%= of.final_price %><%= t '.centimes' %></p>
-            <p><%= t '.final_deadline' %>: <%= of.final_deadline %> <%= t '.day' %></p>
-          </div>
-        </div>
+      <div class="freights_options">
+        <p><%= t '.tm_name' %>: <%= of.transport_mode_name %></p>
+        <p><%= t '.final_price' %>: <%= t '.currency' %> <%= of.final_price %><%= t '.centimes' %></p>
+        <p><%= t '.final_deadline' %>: <%= of.final_deadline %> <%= t '.day' %></p><br/>
+        <p>-------------------------------------------</p>
       </div>
     <% end %>
-  <% end %>
-  <%= button_to (t '.process_order'), process_order_path(@order.id), :class => "btn btn-danger" %>
+    <br/>
+    <div>
+      <%= form_with url: '/proceed', method: :get do |f| %>
+        <%= hidden_field( :order, :order_id) %>
+        <%= f.label :order_freight_id, (t '.select_order_freight') %>
+        <%= f.collection_select :order_freight_id, @order_freights, :id, :transport_mode_name %><br/>
+        <%= f.submit 'Salvar', :class => "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
 <% end %>
-
-
-
-
+<% if @order.processing? %>
+  <div>
+    <p class="text-danger"><%= t '.infos' %></p>
+    <p><%= t '.run_date' %>: <%= @order.order_run_date %></p>
+    <p><%= t '.final_price' %>: <%= t '.currency' %> <%= @order.order_final_price %><%= t '.centimes' %></p>
+    <p><%= t '.final_deadline' %>: <%= @order.order_final_deadline %> <%= t '.day' %></p>
+    <p><%= t '.vehicle' %>: <%= @order.vehicle %></p>
+  </div>
+<% end %>

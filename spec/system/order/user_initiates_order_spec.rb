@@ -64,9 +64,9 @@ describe 'Usuário vê formulário para iniciar uma ordem de serviço' do
     expect(page).to have_content order.code
     expect(page).to have_content 'Selecione a opção de frete'
     expect(page).to have_content 'Modalidade de Transporte: Motocicleta'
-    expect(page).to have_content 'Preço Total: R$ 107,00'
+    expect(page).to have_content 'Preço Final: R$ 107,00'
     expect(page).to have_content 'Modalidade de Transporte: Motocicleta'
     expect(page).to have_content 'Modalidade de Transporte: Furgão'
-    expect(page).to have_content 'Preço Total: R$ 155,00'
+    expect(page).to have_content 'Preço Final: R$ 155,00'
   end
 end

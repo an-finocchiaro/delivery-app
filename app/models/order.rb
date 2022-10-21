@@ -34,4 +34,13 @@ class Order < ApplicationRecord
       end
     end
   end
+
+  def set_vehicle(order_freight_id)
+    @order_freight = OrderFreight.find(@order_freight.id)
+    transport_mode_name = @order_freight.transport_mode_name
+    @vehicles = Vehicle.where(name: transport_mode_name, availability: 0)
+    @vehicle = @vehicles.first
+    @vehicle.reserved!
+    @vehicle.license
+  end
 end

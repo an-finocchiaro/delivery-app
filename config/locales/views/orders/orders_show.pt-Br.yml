@@ -29,11 +29,17 @@ pt-BR:
       run_order: 'Iniciar Ordem de Serviço'
       select_transport_option: "Selecione a opção de frete"
       tm_name: 'Modalidade de Transporte'
-      final_price: 'Preço Total'
+      final_price: 'Preço Final'
       final_deadline: 'Prazo de Entrega'
       choose_freight: 'Escolha esta Modalidade de Transporte'
       day: 'dia(s)'
       currency: 'R$'
       centimes: ',00'
       process_order: 'Salvar'
+      select_order_freight: 'Escolha a modalidade: '
+      infos: 'Dados de execução'
+      final_price: 'Preço Final'
+      final_deadline: 'Prazo de Entrega'
+      run_date: 'Data de Início'
+      vehicle: 'Veículo Reservado'
       

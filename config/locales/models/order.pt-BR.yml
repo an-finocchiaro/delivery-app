@@ -1,6 +1,7 @@
 pt-BR:
   pending: "Pendente"
   running: "Em Andamento"
+  processing: "Em Execução"
   canceled: "Encerrada"
   activerecord:
     models:
