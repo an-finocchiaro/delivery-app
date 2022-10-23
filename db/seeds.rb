@@ -57,3 +57,7 @@ distance_rate_for_other_transport_mode_range_two = DeliveryDeadline.create!(tran
 distance_rate_for_another_transport_mode_range_one = DeliveryDeadline.create!(transport_mode: another_transport_mode, min_delivery_distance: 0, max_delivery_distance: 150, deadline: 2)
 distance_rate_for_another_transport_mode_range_two = DeliveryDeadline.create!(transport_mode: another_transport_mode, min_delivery_distance: 150, max_delivery_distance: 300, deadline: 3)
 
+#----vehicles
+vehicle = Vehicle.create!(license: 'ZIA4437', brand: 'Ford', model: 'Cargo 816', year: '2019', max_load: '7000', transport_mode: another_transport_mode)
+other_vehicle = Vehicle.create!(license: 'CDN3312', brand: 'Honda', model: 'CG Cargo', year: '2021', max_load: '20', transport_mode: other_transport_mode)
+another_vehicle = Vehicle.create!(license: 'ABC1234', brand: 'Fiat', model: 'Fiorino', year: '2020', max_load: '650', transport_mode: another_transport_mode)

@@ -3,6 +3,7 @@ class TransportMode < ApplicationRecord
   has_many :weight_rates
   has_many :distance_rates
   has_many :delivery_deadlines
+  has_many :order_freights
 
   validates :name, uniqueness: true
 

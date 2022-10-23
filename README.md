@@ -1,6 +1,9 @@
 # README
 
-Pessoal, enviei o último commit ainda com teste não resolvido. Estou atrasada porque passei o mês de setembro na casa da minha filha, que voltou a trabalhar depois da licença maternidade e precisou de um help provisório. Conseguia assistir as aulas de vídeo só a noite e voltei para casa - no começo de outubro - com um atraso de mais ou menos uma semana em relação ao cronograma. E acabou ficando pouco tempo para o projeto. Enfim, fiz o melhor que pude e vou terminando o que falta. 
+Para acessar como usuário regular:
+pedro@sistemadefrete.com  |  password
+Para acessar como administrador:
+ana@sistemadefrete.com  |  password
 
 ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-linux]
 Rails 7.0.4
@@ -16,11 +19,10 @@ gem "bootstrap"
 Para popular o banco de dados com o arquivo seeds execute no terminal o comando: db:seed
 Para executar os testes execute no terminal o comando: rspec
 
-funcionalidades faltando:
+funcionalidades faltando para domingo:
 
-1 reservar veiculo, registrar novos dados na OS, apagar formulário de consulta
-2 encerrar ordem, calcular atraso? registrar novos dados
-3 busca por OS sem login
+1 encerrar ordem, calcular atraso? registrar novos dados
+2 busca por OS sem login
 
 link Trello
 https://trello.com/invite/b/CrMktbd1/f3249ef42ea90b6d659b69b924978b68/sistema-de-frete

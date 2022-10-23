@@ -34,33 +34,16 @@
   <%= button_to (t '.run_order'), run_order_path(@order.id), :class => "btn btn-danger" %>
 <% end %>
 <% if @order.running? %>
-  <h4 class="text-danger"><%= t '.select_transport_option'%></h4><br/>
-  <div>
-    <% @order.order_freights.each do |of| %>
-      <div class="freights_options">
-        <p><%= t '.tm_name' %>: <%= of.transport_mode_name %></p>
-        <p><%= t '.final_price' %>: <%= t '.currency' %> <%= of.final_price %><%= t '.centimes' %></p>
-        <p><%= t '.final_deadline' %>: <%= of.final_deadline %> <%= t '.day' %></p><br/>
-        <p>-------------------------------------------</p>
-      </div>
-    <% end %>
-    <br/>
-    <div>
-      <%= form_with url: '/proceed', method: :get do |f| %>
-        <%= hidden_field( :order, :order_id) %>
-        <%= f.label :order_freight_id, (t '.select_order_freight') %>
-        <%= f.collection_select :order_freight_id, @order_freights, :id, :transport_mode_name %><br/>
-        <%= f.submit 'Salvar', :class => "btn btn-danger" %>
-      <% end %>
-    </div>
-  </div>
+  <%= link_to 'Escolher Opção de Frete', edit_order_path(@order.id), :class => "btn btn-danger" %>
 <% end %>
+
+
 <% if @order.processing? %>
   <div>
     <p class="text-danger"><%= t '.infos' %></p>
     <p><%= t '.run_date' %>: <%= @order.order_run_date %></p>
     <p><%= t '.final_price' %>: <%= t '.currency' %> <%= @order.order_final_price %><%= t '.centimes' %></p>
     <p><%= t '.final_deadline' %>: <%= @order.order_final_deadline %> <%= t '.day' %></p>
-    <p><%= t '.vehicle' %>: <%= @order.vehicle %></p>
+    <p><%= t '.vehicle' %>: <%= @order.order_final_vehicle %></p>
   </div>
 <% end %>

@@ -1,5 +1,4 @@
 class OrderFreight < ApplicationRecord
+  belongs_to :transport_mode
   belongs_to :order
-  has_many :transport_modes
- 
 end
