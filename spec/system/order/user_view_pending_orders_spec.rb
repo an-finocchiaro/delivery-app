@@ -8,7 +8,7 @@ describe 'Usuário vê índice de Ordens de Serviço Pendentes' do
 
     login_as(user)
     visit root_path
-    click_on 'Ver Ordens de Serviço Pendentes'
+    click_on 'Ver Ordens de Serviço'
     
     expect(page).to have_content 'Nome do Destinatário: Maria Moraes'
     expect(page).to have_content 'Nome do Destinatário: José Abreu'
@@ -23,7 +23,7 @@ describe 'Usuário vê índice de Ordens de Serviço Pendentes' do
     
     login_as(user)
     visit root_path
-    click_on 'Ver Ordens de Serviço Pendentes'
+    click_on 'Ver Ordens de Serviço'
     click_on order.code
 
     expect(page).to have_content "Ordem de Serviço: #{order.code}"

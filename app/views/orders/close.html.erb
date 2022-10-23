@@ -1,0 +1,26 @@
+<h4><%= t '.title' %></h4>
+<%= link_to (t '.back'), orders_path, :class => "btn btn-danger" %>
+
+<%= form_with(model: @order) do |f| %>
+  <h5><%= t '.subtitle' %> <%= @order.code%><br/>
+  <br/>
+  <div>
+    <%= f.label :order_closing_date, :class => "form-label" %>
+    <%= f.date_field :order_closing_date, :class => "form-control"%>
+  </div>
+  <br/>
+  <div>
+    <%= f.label :delivery_final_status, :class => "form-label" %>
+    <%= f.select :delivery_final_status, options_for_select(Order.delivery_final_statuses.keys.map {|k| [I18n.t(k), k]}) %>
+  </div>
+  <br/>
+  <p><%= t '.message'%></p>
+  <br/>
+  <div>
+    <%= f.label :justification, :class => "form-label" %>
+    <%= f.text_area :justification, :class => "form-control"%>
+  </div>
+  <% if @order.processing? %>
+    <%= f.submit (t '.register'), :class => "btn btn-danger" %>
+  <% end %>
+<% end %>

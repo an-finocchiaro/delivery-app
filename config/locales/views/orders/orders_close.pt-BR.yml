@@ -1,0 +1,8 @@
+pt-BR:
+  orders:
+    close:
+      back: 'Voltar'
+      title: "Encerrar Ordem de Serviço"
+      subtitle: "Ordem de Serviço"
+      register: 'Salvar'
+      message: 'Em caso de entrega fora do prazo, justifique o atraso no campo abaixo'

@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :unbook_vehicle, only: [:close]
 
   def new
     @order = Order.new
@@ -19,6 +20,10 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.all
+    @pending_orders = Order.all.where(status: :pending)
+    @running_orders = Order.all.where(status: :running)
+    @processing_orders = Order.all.where(status: :processing)
+    @closed_orders = Order.all.where(status: :closed)
   end
 
   def show
@@ -47,14 +52,16 @@ class OrdersController < ApplicationController
       @order.processing!
       redirect_to @order, notice: 'Seleção realizada com sucesso'
       return
-    elsif @order.processing?
-      #@order.closed!
-      order_params = params.require(:order).permit(:order_closing_date, :justification)
+    end
+    if @order.processing?
+      order_params = params.require(:order).permit(:order_closing_date, :delivery_final_status, :justification)
+      @order.closed!
       @order.update!(order_params)
-      redirect_to @order, notice: 'Alterações realizadas com sucesso'
+      unbook_vehicle()
+      redirect_to @order, notice: 'Encerramento concluído com sucesso'
+      return
     end
   end
-
 
   def set_and_update_variables
     order_final_price = @order_freight.final_price
@@ -68,13 +75,19 @@ class OrdersController < ApplicationController
   def set_vehicle
     tm_id = @order_freight.transport_mode_id
     @transport_mode = TransportMode.find(tm_id)
-    @vehicles = @transport_mode.vehicles
-    @vehicles.each do |v|
-      if v.available?
-        v.reserved!
-        order_final_vehicle = v.license
-        return
-      end
-    end
+    @vehicle = Vehicle.find_by(transport_mode_id: tm_id, availability: 0)
+    @vehicle.reserved!
+    @vehicle.license
+  end
+
+  def close
+    @order = Order.find(params[:id])
+  end
+
+  def unbook_vehicle
+    @order = Order.find(params[:id])
+    license = @order.order_final_vehicle
+    @vehicle = Vehicle.find_by(license: license)
+    @vehicle.available!
   end
 end  

@@ -2,8 +2,10 @@ class Order < ApplicationRecord
   belongs_to :user
   has_many :order_freights
   has_many :transport_modes
+  has_many :vehicles, through: :transport_modes
 
   enum status: [:pending, :running, :processing, :closed]
+  enum delivery_final_status: [:on_time, :out_of_time]
 
   before_validation :generate_code, on: :create
 

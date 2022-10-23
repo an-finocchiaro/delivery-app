@@ -11,7 +11,9 @@ user = User.create!(name: 'Pedro Matos', email: 'pedro@sistemadefrete.com', pass
 admin_user = User.create!(name: 'Ana Costa', email: 'ana@sistemadefrete.com', password: 'password', role: 1)
 
 #----order
-order = Order.create!(user: user, pickup_address: 'Rua Alvilândia, 120 ', pickup_zipcode: '05045-000', pickup_city: 'São Paulo', pickup_state: 'SP', product_code: 'ABC-6732', product_dimension: 10, product_weight: 10, recipient_name: 'Maria Moraes', recipient_phone: '(11) 93444-2233', deliver_address: 'Rua do Rocio, 720', delivery_zipcode: '04570-000', delivery_city: 'São Paulo', delivery_state: 'SP', delivery_distance: 20)
+order = Order.create!(user: admin_user, pickup_address: 'Rua Alvilândia, 120 ', pickup_zipcode: '05045-000', pickup_city: 'São Paulo', pickup_state: 'SP', product_code: 'ABC-6732', product_dimension: 10, product_weight: 10, recipient_name: 'Maria Moraes', recipient_phone: '(11) 93444-2233', deliver_address: 'Rua do Rocio, 720', delivery_zipcode: '04570-000', delivery_city: 'São Paulo', delivery_state: 'SP', delivery_distance: 20)
+other_order = Order.create!(user: admin_user, pickup_address: 'Rua Madressilva, 45 ', pickup_zipcode: '01315-000', pickup_city: 'São Paulo', pickup_state: 'SP', product_code: 'UXI-3333', product_dimension: 5, product_weight: 8, recipient_name: 'Antonio Oliveira', recipient_phone: '(11) 97878-2315', deliver_address: 'Rua Pintassilgo, 88', delivery_zipcode: '03512-000', delivery_city: 'São Paulo', delivery_state: 'SP', delivery_distance: 15)
+another_order = Order.create!(user: admin_user, pickup_address: 'Rua Brasilia, 345 ', pickup_zipcode: '04555-000', pickup_city: 'São Paulo', pickup_state: 'SP', product_code: 'LLL-1313', product_dimension: 7, product_weight: 6, recipient_name: 'Amanda Cortes', recipient_phone: '(11) 95434-1313', deliver_address: 'Rua Luis Pimentel, 800', delivery_zipcode: '03813-000', delivery_city: 'São Paulo', delivery_state: 'SP', delivery_distance: 16)
 
 #----transport_modes
 transport_mode = TransportMode.create!(name: 'Bicicleta', min_distance: 1, max_distance: 15, min_weight: 0, max_weight: 6, fixed_rate: 5)

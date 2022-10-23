@@ -56,7 +56,7 @@ describe 'Usuário vê formulário para iniciar uma ordem de serviço' do
 
     login_as(user)
     visit root_path
-    click_on 'Ver Ordens de Serviço Pendentes'
+    click_on 'Ver Ordens de Serviço'
     click_on order.code
     click_on 'Iniciar Ordem de Serviço'
 

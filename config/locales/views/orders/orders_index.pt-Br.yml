@@ -2,10 +2,14 @@ pt-BR:
   orders:
     index:
       title: "Ordens de Serviço"
-      subtitle: "Ordem de Serviço:"
+      subtitle: "Ordem de Serviço"
       ds_recipient_name: 'Nome do Destinatário'
       ds_recipient_phone: 'Telefone para Contato'
       pr_code: 'Código do Produto'
       order_status: 'Situação da Ordem de Serviço'
       user_name: 'Usuário Responsável pelo Cadastro'
       message: 'Não existem Ordens de Serviço cadastradas'
+      pending_orders: 'ORDENS PENDENTES'
+      running_orders: 'ORDENS EM ANDAMENTO'
+      processing_orders: 'ORDENS EM EXECUÇÃO'
+      closed_orders: 'ORDENS ENCERRADAS'

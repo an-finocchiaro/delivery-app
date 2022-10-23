@@ -3,6 +3,8 @@ pt-BR:
   running: "Em Andamento"
   processing: "Em Execução"
   closed: "Encerrada"
+  on_time: "No Prazo"
+  out_of_time: "Em Atraso"
   activerecord:
     models:
       order:
@@ -27,6 +29,9 @@ pt-BR:
         user: 'Usuário'
         status: 'Situação'
         code: 'Código'
+        order_closing_date: 'Data de Encerramento'
+        delivery_final_status: 'Situação Final da Entrega'
+        justification: 'Justificativa'
 
         
           

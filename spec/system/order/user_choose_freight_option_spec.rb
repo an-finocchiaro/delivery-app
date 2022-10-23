@@ -43,19 +43,20 @@ describe "Usuário escolhe opção de frete" do
 
     login_as(user)
     visit root_path
-    click_on 'Ver Ordens de Serviço Pendentes'
+    click_on 'Ver Ordens de Serviço'
     click_on order.code
     click_on 'Iniciar Ordem de Serviço'
-    #Capybara::ElementNotFound
-    #choose("#of_id=2")
-    #click_on 'Escolher'
+    page.choose("of_id_2")
+    #click_on 'submit'
+
+    #Capybara::ElementNotFound:
+    #Unable to find link or button "submit"
     
     #expect(page).to have_content "Situação da Ordem de Serviço: Em Execução"
     #expect(page).to have_content 'Dados de Execução'
     #expect(page).to have_content 'Veículo Reservado: ZIA4437'
     #expect(page).to have_content 'Preço Final: R$ 155,00'
     #expect(page).to have_content 'Data de Início'
-    
   end
   
 end

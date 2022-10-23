@@ -2,6 +2,12 @@
 <h4><%= t '.title' %></h4><br/>
 <div>
   <h5><%= t '.subtitle' %>: <%= @order.code %></h5><br/>
+  <br/>
+  <div>
+    <p><%= t '.order_status' %>: <%= I18n.translate(@order.status) %></p>
+    <p><%= t '.user_name' %>: <%= @order.user.name %></p><br/>
+  </div>
+  <br/>
   <div>
     <p class="text-danger"><%= t '.pickup_section' %></p>
     <p><%= t '.ps_address' %>: <%= @order.pickup_address %></p>
@@ -25,10 +31,6 @@
     <p><%= t '.ds_state' %>: <%= @order.delivery_state %></p>
     <p><%= t '.ds_distance' %>: <%= @order.delivery_distance %> <%= t '.km' %></p><br/>
   </div>
-  <div>
-    <p><%= t '.order_status' %>: <%= I18n.translate(@order.status) %></p>
-    <p><%= t '.user_name' %>: <%= @order.user.name %></p><br/>
-  </div>
 </div>
 <% if @order.pending? %>
   <%= button_to (t '.run_order'), run_order_path(@order.id), :class => "btn btn-danger" %>
@@ -37,13 +39,24 @@
   <%= link_to 'Escolher Opção de Frete', edit_order_path(@order.id), :class => "btn btn-danger" %>
 <% end %>
 
-
-<% if @order.processing? %>
+<% if @order.processing? || @order.closed? %>
   <div>
     <p class="text-danger"><%= t '.infos' %></p>
     <p><%= t '.run_date' %>: <%= @order.order_run_date %></p>
     <p><%= t '.final_price' %>: <%= t '.currency' %> <%= @order.order_final_price %><%= t '.centimes' %></p>
     <p><%= t '.final_deadline' %>: <%= @order.order_final_deadline %> <%= t '.day' %></p>
-    <p><%= t '.vehicle' %>: <%= @order.order_final_vehicle %></p>
+    <br/>
   </div>
+  <% if @order.processing? %>
+    <%= button_to (t '.close_order'), close_order_path(@order.id), :class => "btn btn-danger" %>
+  <% end %>
 <% end %>
+
+<% if @order.closed? %>
+  <div>
+    <p><%= t '.order_closing_date' %>: <%= @order.order_closing_date %></p>
+    <p><%= t '.delivery_final_status' %>: <%= I18n.translate(@order.delivery_final_status) %></p>
+    <p><%= t '.justification' %>: <%= @order.justification %></p>
+<% end %>
+<br/>
+
