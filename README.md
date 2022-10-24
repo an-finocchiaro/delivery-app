@@ -19,11 +19,6 @@ gem "bootstrap"
 Para popular o banco de dados com o arquivo seeds execute no terminal o comando: db:seed
 Para executar os testes execute no terminal o comando: rspec
 
-funcionalidades faltando para domingo:
-
-1 encerrar ordem, calcular atraso? registrar novos dados
-2 busca por OS sem login
-
 link Trello
 https://trello.com/invite/b/CrMktbd1/f3249ef42ea90b6d659b69b924978b68/sistema-de-frete
 
