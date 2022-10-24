@@ -90,4 +90,9 @@ class OrdersController < ApplicationController
     @vehicle = Vehicle.find_by(license: license)
     @vehicle.available!
   end
+
+  def search
+    @code = params["query"]
+    @order = Order.find_by("code LIKE ?", "%#{@code}%")
+  end
 end  

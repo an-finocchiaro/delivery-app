@@ -1,0 +1,23 @@
+<h4><%= t '.title' %></h4>
+<section class="order_search">
+  <div>
+    <%= form_with(url: search_orders_path, method: :get) do |f| %>
+      <%= f.label :query, (t '.order_search'), :class => "form-label" %>
+      <%= f.text_field :query, :class => "form-control" %>
+      <%= f.submit (t '.search'), :class => "btn btn-danger" %>
+    <% end %>
+  </div>
+  <div>
+    <% if @order.present? %>
+      
+      <h5><%= t '.subtitle' %>: <%= @order.code %></h5><br/>
+      <p><%= t '.run_date' %>: <%= I18n.l @order.order_run_date %></p>
+      <p><%= t '.final_deadline' %>: <%= @order.order_final_deadline %> <%= t '.day' %></p>
+      <p><%= t '.estimated_delivery_date' %>: <%= I18n.l (@order.order_run_date + @order.order_final_deadline) %></p>
+      <p><%= t '.reserved_vehicle' %>: <%= @order.order_final_vehicle %></p>
+      <p><%= t '.order_status' %>: <%= I18n.translate(@order.status) %></p>
+    <% else %>
+      <%= t '.fail' %>
+    <% end %>
+  </div>
+</section>

@@ -42,7 +42,7 @@
 <% if @order.processing? || @order.closed? %>
   <div>
     <p class="text-danger"><%= t '.infos' %></p>
-    <p><%= t '.run_date' %>: <%= @order.order_run_date %></p>
+    <p><%= t '.run_date' %>: <%= I18n.l @order.order_run_date %></p>
     <p><%= t '.final_price' %>: <%= t '.currency' %> <%= @order.order_final_price %><%= t '.centimes' %></p>
     <p><%= t '.final_deadline' %>: <%= @order.order_final_deadline %> <%= t '.day' %></p>
     <br/>
@@ -54,7 +54,7 @@
 
 <% if @order.closed? %>
   <div>
-    <p><%= t '.order_closing_date' %>: <%= @order.order_closing_date %></p>
+    <p><%= t '.order_closing_date' %>: <%= I18n.l @order.order_closing_date %></p>
     <p><%= t '.delivery_final_status' %>: <%= I18n.translate(@order.delivery_final_status) %></p>
     <p><%= t '.justification' %>: <%= @order.justification %></p>
 <% end %>

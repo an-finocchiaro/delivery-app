@@ -35,11 +35,11 @@ describe "Usuário escolhe opção de frete" do
     
 
     #----delivery_deadlines
-    distance_rate_for_other_transport_mode_range_one = DeliveryDeadline.create!(transport_mode: other_transport_mode, min_delivery_distance: 0, max_delivery_distance: 50, deadline: 1)
-    distance_rate_for_other_transport_mode_range_two = DeliveryDeadline.create!(transport_mode: other_transport_mode, min_delivery_distance: 50, max_delivery_distance: 80, deadline: 2)
+    delivery_deadline_for_other_transport_mode_range_one = DeliveryDeadline.create!(transport_mode: other_transport_mode, min_delivery_distance: 0, max_delivery_distance: 50, deadline: 1)
+    delivery_deadline_for_other_transport_mode_range_two = DeliveryDeadline.create!(transport_mode: other_transport_mode, min_delivery_distance: 50, max_delivery_distance: 80, deadline: 2)
 
-    distance_rate_for_another_transport_mode_range_one = DeliveryDeadline.create!(transport_mode: another_transport_mode, min_delivery_distance: 0, max_delivery_distance: 150, deadline: 2)
-    distance_rate_for_another_transport_mode_range_two = DeliveryDeadline.create!(transport_mode: another_transport_mode, min_delivery_distance: 150, max_delivery_distance: 300, deadline: 3)
+    delivery_deadline_for_another_transport_mode_range_one = DeliveryDeadline.create!(transport_mode: another_transport_mode, min_delivery_distance: 0, max_delivery_distance: 150, deadline: 2)
+    delivery_deadline_for_another_transport_mode_range_two = DeliveryDeadline.create!(transport_mode: another_transport_mode, min_delivery_distance: 150, max_delivery_distance: 300, deadline: 3)
 
     login_as(user)
     visit root_path

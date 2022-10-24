@@ -1,0 +1,14 @@
+pt-BR:
+  orders:
+    search:
+      title: "Digite o número da Ordem de Serviço"
+      order_search: "Buscar Ordem"
+      search: 'Buscar'
+      subtitle: 'Ordem de Serviço'
+      run_date: 'Data de Início'
+      final_deadline: 'Prazo de Entrega'
+      estimated_delivery_date: 'Data Prevista de Entrega'
+      reserved_vehicle: 'Veículo Reservado'
+      order_status: 'Situação da Ordem de Serviço'
+      fail: 'Não encontramos Ordem de Serviço com o código digitado'
+  
